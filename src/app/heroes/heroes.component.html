@@ -1,0 +1,40 @@
+<!-- You used ng generate to create a second HeroesComponent. -->
+<!-- You displayed the HeroesComponent by adding it to the AppComponent shell. -->
+<!-- You applied the UppercasePipe to format the name. -->
+<!-- You used two-way data binding with the ngModel directive. -->
+<!-- You learned about the AppModule. -->
+<!-- You imported the FormsModule in the AppModule so that Angular would recognize and apply the ngModel directive. -->
+<!-- You learned the importance of declaring components in the AppModule. -->
+
+<!-- use of pipes -->
+<!-- <h2>{{value | currency }}</h2> -->
+
+<!-- Add a click event binding to the <button> in the <li></li> -->
+<h2>My Heroe List</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <!--  (click)="onSelected(hero)" -->
+    <a routerLink="/detail/{{ hero.id }}">
+      <!-- When the current row hero is the same as the selectedHero, Angular adds the selected CSS class. -->
+      <!-- When the two heroes are different, Angular removes the class. -->
+      <button type="button">
+        <!-- (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> -->
+        <span class="badge">{{ hero.id }}</span
+        >{{ hero.name }}
+      </button>
+    </a>
+  </li>
+</ul>
+
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+
+<!-- showing the hero object -->
+<!-- <h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div> -->
+
+<!-- two way binding -->
+<!-- [(ngModel)] is Angular's two-way data binding syntax. -->
+<!-- <div>
+    <label for="name">Hero name: </label>
+    <input type="text" id="name" [(ngModel)]="hero.name" placeholder="Enter Hero Name">
+  </div> -->

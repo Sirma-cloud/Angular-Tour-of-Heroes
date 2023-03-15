@@ -1,0 +1,18 @@
+
+<!-- created a feature component hero-details.
+splits up large components into smaller subcomponents 
+Each focused on a specific task or workflow -->
+
+
+<!-- To show details about a hero when you click their name in the list, -->
+<!-- add a section in the template that displays their details -->
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id:</span> {{hero.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Enter name">
+    </div>
+    <button (click)="save()">Save Changes</button>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
